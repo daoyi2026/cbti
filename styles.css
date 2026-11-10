@@ -141,3 +141,7 @@ main{padding-top:56px}
 @media(max-height:750px){.draw-modal{padding:25px}.draw-modal h2{font-size:22px}.draw-modal .deck{width:218px;height:304px;margin:15px auto}.draw-cat-copy{padding:12px 14px}.draw-cat-copy h3{font-size:22px}.draw-cat-copy>p:first-child{display:none}.draw-note{font-size:9px}.draw-modal .modal-copy{font-size:11px}}
 .draw-modal{overflow-x:hidden}
 .draw-modal .deck{max-width:100%;height:auto;aspect-ratio:5/7}
+
+/* Keep a clear gap after the homepage title without the removed helper copy. */
+.home-primary{margin-top:28px}
+@media(max-width:700px){main[data-screen="home"] .home-primary{margin-top:0}}

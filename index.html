@@ -3,7 +3,7 @@
 <head>
  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
  <meta name="theme-color" content="#f6f2e9"><title>咪格局 · 人类，请交出你的咪格</title>
- <link rel="stylesheet" href="./styles.css?v=9">
+ <link rel="stylesheet" href="./styles.css?v=10">
 </head>
 <body>
  <header class="site-header"><a href="./" class="brand" id="home-link"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="m5 6 3 17 5 6 5 3 5-3 5-6 3-17-9 6-4-2-4 2Z"/><path d="m11 20 4 2m10-2-4 2m-6 4 3 1 3-1"/></svg><span>咪格局<small>PAWSONA</small></span></a><nav aria-label="主导航"><button data-atlas>咪格图鉴</button><button data-adopt>抱只猫回家 <span>↗</span></button></nav></header>
@@ -19,8 +19,7 @@
      <div class="stage-loading" id="stage-loading" role="status"><span>✳</span><b id="loading-label">小猫正在梳理毛发…</b><small>第一次见面，稍等一下。</small><button id="retry-model" type="button" hidden>再请一次小猫</button></div>
      <div class="portrait-caption"><span id="caption-name">MUSE · 灵感惯犯</span></div>
     </div>
-    <div class="stage-controls" id="stage-controls"><div><button type="button" id="rotate-left" aria-label="向左旋转">↶</button><button type="button" id="reset-view" aria-label="回正视角">⌾</button><button type="button" id="rotate-right" aria-label="向右旋转">↷</button></div><button type="button" id="pause-motion">暂停小动作</button></div>
-    <div class="character-actions" id="character-actions" role="group" aria-label="逗逗这只猫"></div>
+    <div class="stage-controls" id="stage-controls"><div><button type="button" id="rotate-left" aria-label="向左旋转">↶</button><button type="button" id="reset-view" aria-label="回正视角">⌾</button><button type="button" id="rotate-right" aria-label="向右旋转">↷</button></div></div>
    </section>
   </div>
   <section id="adoption-section" class="adoption-section" aria-labelledby="adoption-title"></section>
@@ -31,5 +30,5 @@
  <dialog id="save-dialog" class="modal save-modal" aria-labelledby="save-title"><button class="modal-close" data-close aria-label="关闭保存图片">×</button><h2 id="save-title">把这只猫收进口袋。</h2><p class="modal-copy">猫咪、门框，还有这一点小脾气。</p><img id="save-preview" alt="生成的咪格卡图片"><a id="download-card" class="primary" download>保存图片 <span>↓</span></a><button type="button" class="secondary" id="share-card" hidden>分享图片 <span>↗</span></button><p class="quiet-note">手机上也可以长按图片保存。</p></dialog>
  <dialog id="answer-dialog" class="modal answer-modal" aria-labelledby="answer-title"><button class="modal-close" data-close aria-label="关闭答案卡片">×</button><p class="card-overline">你的咪格是</p><h2 id="answer-title"></h2><div class="answer-art"><img id="answer-image" alt="你的咪格代表形象" hidden><span id="answer-pending">小猫正在出场…</span></div><p id="answer-quote"></p><button class="primary" id="answer-continue">看看我的咪格 <span>↗</span></button></dialog>
  <div class="toast" id="toast" role="status"></div>
- <script type="module" src="./app.js?v=9"></script>
+ <script type="module" src="./app.js?v=10"></script>
 </body></html>

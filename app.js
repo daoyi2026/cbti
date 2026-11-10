@@ -18,19 +18,16 @@ function stateChanged({state,person,actions,paused}){
  const ready=state==='ready',missing=state==='missing';
  $('#stage-loading').hidden=!['loading','error'].includes(state);$('#retry-model').hidden=state!=='error';$('#loading-label').textContent=state==='error'?'小猫暂时没能出场':'小猫正在梳理毛发…';
  $('#missing-character').hidden=!missing;$('#mystery').hidden=state!=='mystery';if(missing)$('#missing-code').textContent=person.code;
- $('#stage-controls').hidden=!ready;$('#character-actions').hidden=!ready;
+ $('#stage-controls').hidden=!ready;
  if(ready||missing)updateAnswerImage();
  if(state==='error'&&$('#answer-dialog').open)$('#answer-pending').textContent='形象暂时没能加载，仍可查看你的咪格。';
- $('#pause-motion').textContent=paused?'继续小动作':'暂停小动作';
- $('#character-actions').innerHTML=actions.map((text,index)=>`<button type="button" data-action="${index}">${text}</button>`).join('');
- for(const button of document.querySelectorAll('[data-action]'))button.addEventListener('click',()=>viewer?.act(Number(button.dataset.action)));
  for(const button of document.querySelectorAll('[data-save]'))button.disabled=state==='loading'||state==='error';
 }
 function stageMetadata(code){const p=byCode[code];viewCode=code;$('#caption-name').textContent=`${code} · ${p.name}`;}
 async function showCharacter(code){stageMetadata(code);if(viewer)await viewer.show(code);}
 function showMystery(){if(viewer)viewer.clear('mystery');else stateChanged({state:'mystery',actions:[],paused:false});$('#caption-name').textContent='你的咪格 · 待揭晓';$('#mystery-dots').innerHTML=answers.map(a=>`<i class="${a!==null?'done':''}"></i>`).join('');stage.style.setProperty('--stage-color','#dfe7d6');}
 function renderHome(){
- panel.innerHTML=`<h1 class="hero-title">人类，<br>请交出你的<em>咪格。</em></h1><p class="hero-copy">测测你是哪一款猫，<br>再抽一只真实的猫搭子。</p><button class="primary home-primary" id="begin">${answers.some(a=>a!==null)?'继续咪格鉴定':'开始咪格鉴定'} <span>↗</span></button><p class="button-note">8 道日常小事，没有标准答案</p><button class="text-button" data-atlas>先翻翻十二咪格图鉴 →</button><button class="text-button sample-shortcut" id="preview-sample">先看咪格卡 →</button><p class="preview-note">趣味测试，看看你藏着哪只猫。</p>`;
+ panel.innerHTML=`<h1 class="hero-title">人类，<br>请交出你的<em>咪格。</em></h1><button class="primary home-primary" id="begin">${answers.some(a=>a!==null)?'继续咪格鉴定':'开始咪格鉴定'} <span>↗</span></button><button class="text-button" data-atlas>先翻翻十二咪格图鉴 →</button><button class="text-button sample-shortcut" id="preview-sample">先看咪格卡 →</button>`;
  $('#begin').addEventListener('click',()=>{const index=answers.findIndex(a=>a===null);question=index<0?7:index;if(index<0){sampleResult=scoreAnswers(answers).code;isSample=false;go('result');}else go('quiz');});panel.querySelector('[data-atlas]').addEventListener('click',openAtlas);$('#preview-sample').addEventListener('click',()=>{sampleResult='MUSE';isSample=true;go('result');});
  showCharacter(viewCode);
 }
@@ -68,7 +65,7 @@ $('#draw-again').addEventListener('click',openDraw);
 $('#draw-dialog').addEventListener('close',()=>{clearTimeout(flipTimer);flipping=false;});
 $('#drawn-cat').addEventListener('error',event=>{if(event.target.tagName==='IMG')event.target.hidden=true;},true);
 $('#home-link').addEventListener('click',event=>{event.preventDefault();go('home');});for(const b of document.querySelectorAll('.site-header [data-atlas]'))b.addEventListener('click',openAtlas);for(const b of document.querySelectorAll('.site-header [data-adopt]'))b.addEventListener('click',openAdopt);
-$('#rotate-left').addEventListener('click',()=>viewer?.rotate(-.5));$('#rotate-right').addEventListener('click',()=>viewer?.rotate(.5));$('#reset-view').addEventListener('click',()=>viewer?.reset());$('#pause-motion').addEventListener('click',()=>{if(viewer)$('#pause-motion').textContent=viewer.pause()?'继续小动作':'暂停小动作';});$('#retry-model').addEventListener('click',()=>showCharacter(viewCode));
+$('#rotate-left').addEventListener('click',()=>viewer?.rotate(-.5));$('#rotate-right').addEventListener('click',()=>viewer?.rotate(.5));$('#reset-view').addEventListener('click',()=>viewer?.reset());$('#retry-model').addEventListener('click',()=>showCharacter(viewCode));
 
 function wrap(ctx,text,x,y,width,lineHeight){let line='';for(const char of text){const next=line+char;if(ctx.measureText(next).width>width&&line){ctx.fillText(line,x,y);y+=lineHeight;line=char;}else line=next;}if(line)ctx.fillText(line,x,y);return y+lineHeight;}
 async function poster(){
