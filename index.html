@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#f6f2e9"><title>咪格局 · 人类，请交出你的咪格</title>
+ <link rel="stylesheet" href="./styles.css?v=9">
+</head>
+<body>
+ <header class="site-header"><a href="./" class="brand" id="home-link"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="m5 6 3 17 5 6 5 3 5-3 5-6 3-17-9 6-4-2-4 2Z"/><path d="m11 20 4 2m10-2-4 2m-6 4 3 1 3-1"/></svg><span>咪格局<small>PAWSONA</small></span></a><nav aria-label="主导航"><button data-atlas>咪格图鉴</button><button data-adopt>抱只猫回家 <span>↗</span></button></nav></header>
+ <main id="experience" data-screen="home">
+  <div class="experience-layout">
+   <section class="copy-panel" id="copy-panel" aria-live="polite"></section>
+   <section class="stage-panel" aria-label="猫咪角色卡">
+    <div class="portrait" id="portrait" data-mode="character" data-ready="loading">
+     <div class="portrait-pattern" aria-hidden="true"></div><span class="portrait-watermark" aria-hidden="true">✳</span>
+     <div id="model-canvas" class="model-canvas"></div><img id="portal" class="portal" src="./assets/portal-frame.png" alt="" width="1086" height="1448" aria-hidden="true">
+     <div class="mystery" id="mystery" hidden><span class="mystery-ornament">✦</span><div class="mystery-cat" aria-hidden="true"><svg viewBox="0 0 160 170"><path d="m24 28 8 79 22 26 26 13 26-13 22-26 8-79-36 21-20-9-20 9Z"/></svg><b>?</b></div><strong>咪格还在躲猫猫</strong><p>答案里，藏着你的猫。</p><div id="mystery-dots" class="mystery-dots"></div></div>
+     <div class="missing-character" id="missing-character" hidden><span>✦</span><b id="missing-code">BUFF</b><strong>角色形象准备中</strong><small>先认识一下这位咪格。</small></div>
+     <div class="stage-loading" id="stage-loading" role="status"><span>✳</span><b id="loading-label">小猫正在梳理毛发…</b><small>第一次见面，稍等一下。</small><button id="retry-model" type="button" hidden>再请一次小猫</button></div>
+     <div class="portrait-caption"><span id="caption-name">MUSE · 灵感惯犯</span></div>
+    </div>
+    <div class="stage-controls" id="stage-controls"><div><button type="button" id="rotate-left" aria-label="向左旋转">↶</button><button type="button" id="reset-view" aria-label="回正视角">⌾</button><button type="button" id="rotate-right" aria-label="向右旋转">↷</button></div><button type="button" id="pause-motion">暂停小动作</button></div>
+    <div class="character-actions" id="character-actions" role="group" aria-label="逗逗这只猫"></div>
+   </section>
+  </div>
+  <section id="adoption-section" class="adoption-section" aria-labelledby="adoption-title"></section>
+ </main>
+ <footer><span>咪格局 · 角色设定纯属趣味创作</span><span>慢慢认识，认真相遇。</span></footer>
+ <dialog id="atlas-dialog" class="modal atlas-modal" aria-labelledby="atlas-title"><button class="modal-close" data-close aria-label="关闭咪格图鉴">×</button><h2 id="atlas-title">每只猫，都有点自己的脾气。</h2><p class="modal-copy">十二种咪格。哪只让你觉得：这不就是我吗？</p><div id="atlas-grid" class="atlas-grid"></div><p class="quiet-note">代表形象借用猫咪品种与花色梗；真实猫咪各有性格。</p></dialog>
+ <dialog id="draw-dialog" class="modal draw-modal" aria-labelledby="draw-title"><button class="modal-close" data-close aria-label="关闭抽卡">×</button><h2 id="draw-title">有只猫，<br>想和你认识一下。</h2><p class="modal-copy">这张卡里，是一只有真实档案的小猫。</p><div class="deck" id="deck"><div class="deck-shadow"></div><div class="card-back" aria-hidden="true"><div class="card-border"><small>THE FELINE AFFAIRS</small><svg viewBox="0 0 180 210"><path class="arch" d="M90 15C48 15 22 47 22 90v100h136V90c0-43-26-75-68-75Z"/><path class="cat" d="m54 65 5 54 16 20 15 8 15-8 16-20 5-54-21 13-15-5-15 5Z"/><path class="cat" d="m73 109 9 4m25-4-9 4m-13 12 5 3 5-3"/></svg><b>PAWSONA</b><span>✦</span></div></div><article class="draw-front" id="drawn-cat" aria-label="抽到的真实猫咪" hidden></article></div><p class="draw-note" id="draw-note"></p><button type="button" class="primary" id="reveal-card">翻开这张卡 <span>✦</span></button><div id="draw-links" hidden><a id="draw-detail" class="primary" target="_blank" rel="noopener noreferrer">看看领养详情 <span>↗</span></a><p id="draw-source" class="quiet-note"></p></div><button id="draw-again" class="text-button" type="button" hidden>再抽一次</button></dialog>
+ <dialog id="save-dialog" class="modal save-modal" aria-labelledby="save-title"><button class="modal-close" data-close aria-label="关闭保存图片">×</button><h2 id="save-title">把这只猫收进口袋。</h2><p class="modal-copy">猫咪、门框，还有这一点小脾气。</p><img id="save-preview" alt="生成的咪格卡图片"><a id="download-card" class="primary" download>保存图片 <span>↓</span></a><button type="button" class="secondary" id="share-card" hidden>分享图片 <span>↗</span></button><p class="quiet-note">手机上也可以长按图片保存。</p></dialog>
+ <dialog id="answer-dialog" class="modal answer-modal" aria-labelledby="answer-title"><button class="modal-close" data-close aria-label="关闭答案卡片">×</button><p class="card-overline">你的咪格是</p><h2 id="answer-title"></h2><div class="answer-art"><img id="answer-image" alt="你的咪格代表形象" hidden><span id="answer-pending">小猫正在出场…</span></div><p id="answer-quote"></p><button class="primary" id="answer-continue">看看我的咪格 <span>↗</span></button></dialog>
+ <div class="toast" id="toast" role="status"></div>
+ <script type="module" src="./app.js?v=9"></script>
+</body></html>

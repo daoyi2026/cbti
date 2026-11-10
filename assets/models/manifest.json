@@ -1,0 +1,66 @@
+[
+  {
+    "file": "afk-motion.glb",
+    "bytes": 7303124,
+    "sha256": "94aeb657a5f8890b47a813b38f0f3320bd2d85ad4b6f374f8fd4d57ffb29fb4c",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 7.066820843340994,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "ctrl-motion.glb",
+    "bytes": 4690240,
+    "sha256": "708ea7f44e66cba9078906c5a156aa95ba7af5247ab610a642e9184ce5c8f538",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 9.830575470372306,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "look-motion.glb",
+    "bytes": 5016972,
+    "sha256": "0d5fbf1bc979ba702d642f4c9113f936cb2812f0eae376a4d971d6aeff01096f",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 9.831858786898785,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "muse-motion.glb",
+    "bytes": 9518396,
+    "sha256": "62cb26dda1585e7c25cea09977fa7d05c3dfe207bc98fbb8c6f63f6e161ed6b3",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 9.823310721199967,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "npc-motion.glb",
+    "bytes": 4141436,
+    "sha256": "8db6bffd3c2bcbad513b021f1a8947f6b09d18428240ffc4ecaeac3893a843f5",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 9.821961524044921,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "ping-motion.glb",
+    "bytes": 9449696,
+    "sha256": "123b1b3466e50a25dbb562f9ac972790238612483a2abe118c6d4bf1f02600e0",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 9.830575470372306,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "tank-motion.glb",
+    "bytes": 4855812,
+    "sha256": "2eb83f9e9864b556b4ce5cb87a394094ee75849c0aa0ffc02f4243e875b4dc93",
+    "changedChannels": 4,
+    "maxEarAngleDegrees": 9.831858786898785,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  },
+  {
+    "file": "vip-motion.glb",
+    "bytes": 4397592,
+    "sha256": "4d8a380f648b74270301ab3d5277a3cb638c4aceddb53e0bdc9751420ae5f010",
+    "changedChannels": 2,
+    "maxEarAngleDegrees": 7.06779093659076,
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+  }
+]
