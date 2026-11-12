@@ -17,19 +17,19 @@ Open `http://127.0.0.1:4178/`. Set `PORT` to use another port. Serve over HTTP r
 1. Start from the homepage and answer eight questions, each with five choices.
 2. Submit the last answer to reveal the personality card. Results describe the human user's fictional cat persona, not a real cat's breed or temperament.
 3. Draw a real cat's public adoption record. The turning card itself reveals the original photo, name, recorded temperament, and original listing link. The user's personality result remains unchanged behind it.
-4. Save the personality card as a 1080 × 1920 PNG, or explore the twelve-persona field guide.
+4. Save the personality card as a 1080 × 1920 PNG, or explore the eleven-persona field guide.
 
-`?sample=VIP` and `?sample=MUSE` are optional direct personality-card previews. They bypass the questionnaire deliberately. The normal root URL starts the full experience.
+`?sample=VIP`, `?sample=SCOUT`, `?sample=BOSS`, and `?sample=WILD` are optional direct personality-card previews. They bypass the questionnaire deliberately. The normal root URL starts the full experience. The homepage names the MUSE sample explicitly. A result card offers a fresh test that clears all eight answers and removes the sample URL parameter.
 
 ## Models and runtime
 
-Eight Draco-compressed animated GLBs are bundled under `assets/models`, each below 10 MB. Only the displayed character is loaded. Ear/blink loops remain independent of character actions. CHAOS, BUFF, FOOD, and GLAM still have an explicit artwork-pending state. Existing supplied 3D geometry and textures are preserved.
+Eleven Draco-compressed animated GLBs are bundled under `assets/models`, each below 10 MB. Only the displayed character is loaded. Ear/blink and TailIdle loops remain independent of character actions. Resting tails sweep gently while raised tails sway; SCOUT uses a smaller presentation scale. The four previously unmodeled personas are removed. SCOUT (Singapura), BOSS (American Shorthair), and hidden WILD (forest cat) now have supplied, compressed, rigged models with 4K base-color textures. All eleven outcomes have their own model. Existing supplied 3D geometry and textures are preserved.
 
 Three.js, its loaders, the Draco decoder, and the portrait portal are vendored, so the 3D experience does not depend on another local project or an external script CDN. Relative resource paths support both a domain root and a repository subdirectory. Publishing/hosting is not automatically enabled by this repository.
 
 ## Scoring
 
-The eight-question scoring uses primary and secondary affinities, opportunity normalization, fixed calibration, and deterministic tie handling. All 390,625 equally likely answer combinations were enumerated: the twelve result shares range from 8.004864% to 8.566272%. This is a uniform-choice property; actual human preferences need not be uniform. Identical answers give identical results. Breed/color memes are fictional role inspiration, not scientific personality claims.
+The eight-question scoring uses primary and secondary affinities, opportunity normalization, fixed calibration, and deterministic tie handling. All 390,625 equally likely answer combinations were enumerated: the ten standard shares range from 9.3056% to 10.296832%, and hidden WILD occupies 2.882816%. WILD also requires at least two primary explorer choices; it is not awarded randomly. This is a uniform-choice property; actual human preferences need not be uniform. Identical answers give identical results. Breed/color memes are fictional role inspiration, not scientific personality claims.
 
 ## Adoption data
 
@@ -45,7 +45,7 @@ Photos remain remote original-source images, with a visible fallback if unavaila
 npm run check
 ```
 
-Checks cover bundled resource references, GLB hashes and sizes, all questionnaire outcomes and their distribution, single-cat draw eligibility, original-image/listing correspondence, invalid random values, and empty/adopted pools. Generated reports are local and ignored by Git.
+Checks cover bundled resource references, GLB hashes and sizes, all eleven questionnaire outcomes, hidden eligibility, and their distribution, single-cat draw eligibility, original-image/listing correspondence, invalid random values, and empty/adopted pools. Generated reports are local and ignored by Git.
 
 The local browser flow was checked at desktop and narrow mobile viewport sizes, including answer reveal, the real-cat card, repeated draws, canceling a flip, unchanged personality results, and PNG download. Physical-phone performance and subjective animation quality still need device/user review.
 

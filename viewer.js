@@ -2,7 +2,7 @@ import * as THREE from './assets/vendor/three.module.js';
 import {GLTFLoader} from './assets/vendor/GLTFLoader.js';
 import {DRACOLoader} from './assets/vendor/DRACOLoader.js';
 import {createCharacterEffects} from './effects.js';
-import {byCode, modelConfig} from './data.js';
+import {byCode, modelConfig} from './data.js?v=12';
 
 export function createViewer(stage, holder, onState){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -20,7 +20,7 @@ export function createViewer(stage, holder, onState){
  function clear(mode='mystery'){requestId++;unload();code=null;stage.dataset.ready=mode;stage.dataset.mode=mode;onState({state:mode,actions:[],paused});}
  function configure(gltf,config){
   mixer=new THREE.AnimationMixer(model);
-  for(const name of ['Breathe','Living','SmokeLoop']){const clip=THREE.AnimationClip.findByName(gltf.animations,name);if(name==='Living'&&!clip)throw Error('Missing continuous feature animation');if(clip){const action=mixer.clipAction(clip);action.play();action.paused=paused;idleActions.push(action);}}
+  for(const name of ['Breathe','Living','TailIdle','SmokeLoop']){const clip=THREE.AnimationClip.findByName(gltf.animations,name);if(['Living','TailIdle'].includes(name)&&!clip)throw Error('Missing continuous feature animation');if(clip){const action=mixer.clipAction(clip);action.play();action.paused=paused;idleActions.push(action);}}
   const names=config.clips||['Gesture','Gesture2','Gesture3'];
   gestures=names.map(name=>{const clip=THREE.AnimationClip.findByName(gltf.animations,name);if(!clip)throw Error('Missing character action');const action=mixer.clipAction(THREE.AnimationUtils.makeClipAdditive(clip.clone()));action.setLoop(THREE.LoopOnce,1);action.clampWhenFinished=true;return action;});
   mixer.addEventListener('finished',event=>{if(event.action!==active)return;active.stop();active=null;activeIndex=-1;stage.dataset.motion=paused?'paused':'living';});
@@ -35,7 +35,7 @@ export function createViewer(stage, holder, onState){
    if(!person.model){stage.dataset.ready='missing';onState({state:'missing',person,actions:[],paused});return true;}
    stage.dataset.ready='loading';onState({state:'loading',person,actions:[],paused});
    try{
-    const gltf=await loader.loadAsync(new URL(`./assets/models/${person.model}-motion.glb?v=5`,import.meta.url).href);
+    const gltf=await loader.loadAsync(new URL(`./assets/models/${person.model}-motion.glb?v=12`,import.meta.url).href);
     if(id!==requestId){dispose(gltf.scene);return false;}
     model=gltf.scene;const box=new THREE.Box3().setFromObject(model),size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3()),config=modelConfig[person.model],direction=Math.hypot(-1.2,3.3),projected=(3.3*size.x+1.2*size.z)/direction;
     const scale=Math.min(2.4*holder.clientWidth/(holder.clientHeight||1)*.65/projected,2.4*.60/size.y)*(config.scale||1);

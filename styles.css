@@ -145,3 +145,4 @@ main{padding-top:56px}
 /* Keep a clear gap after the homepage title without the removed helper copy. */
 .home-primary{margin-top:28px}
 @media(max-width:700px){main[data-screen="home"] .home-primary{margin-top:0}}
+.hidden-edition{font:11px/1.7 var(--sans);letter-spacing:.08em;color:#9b7c3e;margin:0 0 13px}.atlas-card[data-persona="WILD"]{border-color:#b9ac80;background:#eeecdf}

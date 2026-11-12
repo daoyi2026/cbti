@@ -1,66 +1,103 @@
 [
   {
     "file": "afk-motion.glb",
-    "bytes": 7303124,
-    "sha256": "94aeb657a5f8890b47a813b38f0f3320bd2d85ad4b6f374f8fd4d57ffb29fb4c",
+    "bytes": 7343796,
+    "sha256": "bc1af0c16aeccb492b1ed2308a5dccbe1b7b0094bac1d3ec73692a55d7fe35ee",
     "changedChannels": 2,
     "maxEarAngleDegrees": 7.066820843340994,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Tail skin weights added; texture bytes unchanged; mesh re-encoded at existing quantization",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "ctrl-motion.glb",
-    "bytes": 4690240,
-    "sha256": "708ea7f44e66cba9078906c5a156aa95ba7af5247ab610a642e9184ce5c8f538",
+    "bytes": 8170044,
+    "sha256": "7c1dc9d0a4c49e15ebabf6e32dd52d8ec0702378667444ff1883f783ac7f0a22",
     "changedChannels": 2,
     "maxEarAngleDegrees": 9.830575470372306,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Existing compressed positions, normals, UVs and texture bytes preserved; tail skin weights added",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "look-motion.glb",
-    "bytes": 5016972,
-    "sha256": "0d5fbf1bc979ba702d642f4c9113f936cb2812f0eae376a4d971d6aeff01096f",
+    "bytes": 5026464,
+    "sha256": "3a1f13f7cf2133b6f9775ce268efd1198122149f3d697d5556a57788d60137bf",
     "changedChannels": 2,
     "maxEarAngleDegrees": 9.831858786898785,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "muse-motion.glb",
-    "bytes": 9518396,
-    "sha256": "62cb26dda1585e7c25cea09977fa7d05c3dfe207bc98fbb8c6f63f6e161ed6b3",
+    "bytes": 9535364,
+    "sha256": "a4939098106c4feb5d319d7b309af511480a68750428f1d247b99965db23ce91",
     "changedChannels": 2,
     "maxEarAngleDegrees": 9.823310721199967,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "npc-motion.glb",
-    "bytes": 4141436,
-    "sha256": "8db6bffd3c2bcbad513b021f1a8947f6b09d18428240ffc4ecaeac3893a843f5",
+    "bytes": 4150448,
+    "sha256": "3d3b714b830c3a57686162fbbf75049b146dbac61d542dd599850701dcabd7b6",
     "changedChannels": 2,
     "maxEarAngleDegrees": 9.821961524044921,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "ping-motion.glb",
-    "bytes": 9449696,
-    "sha256": "123b1b3466e50a25dbb562f9ac972790238612483a2abe118c6d4bf1f02600e0",
+    "bytes": 9461108,
+    "sha256": "f4527e2cb088749a3e212b82ee6a66b95c23ad82e51859a7b18ca759596ff2ce",
     "changedChannels": 2,
     "maxEarAngleDegrees": 9.830575470372306,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "tank-motion.glb",
-    "bytes": 4855812,
-    "sha256": "2eb83f9e9864b556b4ce5cb87a394094ee75849c0aa0ffc02f4243e875b4dc93",
+    "bytes": 4867704,
+    "sha256": "28e417e5d4a958f327a3f54a7e360dcaba03937aa2061927d3f841274021b050",
     "changedChannels": 4,
     "maxEarAngleDegrees": 9.831858786898785,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   },
   {
     "file": "vip-motion.glb",
-    "bytes": 4397592,
-    "sha256": "4d8a380f648b74270301ab3d5277a3cb638c4aceddb53e0bdc9751420ae5f010",
+    "bytes": 7806572,
+    "sha256": "6828aaa763834fea518c362b4077ae363de3f2cc668f1124264183634bb86ca7",
     "changedChannels": 2,
     "maxEarAngleDegrees": 7.06779093659076,
-    "geometryAndTextures": "Original buffer bytes preserved outside ear animation outputs"
+    "geometryAndTextures": "Existing compressed positions, normals, UVs and texture bytes preserved; tail skin weights added",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
+  },
+  {
+    "file": "wild-motion.glb",
+    "bytes": 6515644,
+    "sha256": "a220f0aa21a8958227cd0ddf72c5153cd9121d37629054ca06b6c9eb0ffd03ca",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
+  },
+  {
+    "file": "scout-motion.glb",
+    "bytes": 6759556,
+    "sha256": "2e65084032afaf0ea628c73546d861d420b369da0754b0976f601f1189c2c1ac",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
+  },
+  {
+    "file": "boss-motion.glb",
+    "bytes": 7254736,
+    "sha256": "763ac2d098ebfb79859959821f7f0acd96de1f0b5a1c69bb9be98bd132829911",
+    "version": "tail-idle-v1",
+    "tailLoop": "Independent TailIdle loop; gesture channels preserved"
   }
 ]
